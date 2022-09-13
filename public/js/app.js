@@ -220,6 +220,9 @@ function draw(imagePath, posX, posY, width, height)
 
 // クリックしたときのイベント
 canvas.addEventListener("click", e => {
+    if (isFinished) {
+        return false;
+    }
     const rect = canvas.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
